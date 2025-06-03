@@ -1,5 +1,6 @@
 const { Chocolate } = require("./Chocolate");
 const {Usuario} = require("./Usuario");
+const {Venda} = require("./Venda");
 
 async function testaInsert(){
     // CHOCOLATE
@@ -19,6 +20,12 @@ async function testaInsert(){
     // await Chocolate.find({sabor: "Trufa"});
     // dar throw no tratamento de excessões e pegar aqui e tratar, dps re executar a funcão com o novo parametros q o usuario informar
     // await Chocolate.delete("Trufa");
+
+    const venda = new Venda("Chocolates sortidos", "Bruno", "Avenida Castelo Branco", 47.69);
+    //await venda.insert();
+    // await Venda.find({usuario: "Cadu"});
+    // await Venda.update("Cadu", {produto: "Bombom e Trufas", valor: 99.95});
+    // await Venda.delete("Bruno");
 
     console.log("fim");
 }

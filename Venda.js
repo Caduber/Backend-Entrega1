@@ -26,15 +26,15 @@ class Venda {
         }
     }
 
-    static async update(filter, newData) {
-        try {
-            const { db, client } = await connect();
-            const result = await db.collection("vendas").updateMany(filter, { $set: newData });
-            console.log("Vendas atualizadas:", result.modifiedCount);
+    static async update(filter, newData){
+        try{
+            const {db, client} = await connect();
+            const result = await db.collection("vendas").updateMany({usuario: filter}, { $set: newData })
+            console.log("Vendas atualizados", result.modifiedCount);
             client.close();
-        } catch (err) {
+        }catch(err){
             Logger.log("Erro ao atualizar vendas: ", err);
-            console.error("ERRO: ", err);
+            console.log("ERRO: ", err);
         }
     }
 
@@ -50,10 +50,11 @@ class Venda {
         }
     }
 
-    static async delete(filter) {
+    static async delete(usuario) {
         try {
             const { db, client } = await connect();
-            const result = await db.collection("vendas").deleteMany(filter);
+            const venda = {usuario: `${usuario}`};
+            const result = await db.collection("vendas").deleteMany(venda);
             console.log("Vendas removidas:", result.deletedCount);
             client.close();
         } catch (err) {
