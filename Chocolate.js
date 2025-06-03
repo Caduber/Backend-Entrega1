@@ -30,29 +30,30 @@ class Chocolate{
         try{
             const {db, client} = await connect();
             const chocolates = await db.collection("chocolates").find(filter).toArray();
-            console.log("Chocolates encontrados", chocolates);
+            console.log("Chocolates encontrados", chocolates[0]);
             client.close();
+            return chocolates[0];
         }catch(err){
             Logger.log("Erro ao achar chocolates: ", err);
             
             // console.log("Erro: ", err);
-            let retry;
-            const consoleIn = rd.createInterface({
-                input: process.stdin,
-                outuput: process.stdout
-            });
+            // let retry;
+            // const consoleIn = rd.createInterface({
+            //     input: process.stdin,
+            //     outuput: process.stdout
+            // });
         }
     }
 
-    static async update(filter, newData){
+    static async update(filter, newData) {
         try{
             const {db, client} = await connect();
-            const result = await db.collection("chocolates").updateMany(filter, { $set: {"nome": newData} })
+            const result = await db.collection("chocolates").updateOne({sabor: filter }, { $set: newData })
             console.log("Chocolates atualizados", result.modifiedCount);
             client.close();
         }catch(err){
             Logger.log("Erro ao atualizar chocolates: ", err);
-            //console.log("ERRO: ", err);
+            console.log("ERRO: ", err);
         }
     }
 
