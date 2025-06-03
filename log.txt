@@ -1,0 +1,12 @@
+$[2025-05-29T23:33:45.436Z] - Erro ao deletar usuarios: 
+$[2025-05-29T23:35:56.990Z] - Erro ao deletar usuarios: 
+$[2025-05-29T23:37:42.002Z] - Erro ao deletar usuarios: 
+$[2025-05-29T23:38:24.792Z] - Erro ao deletar usuarios: 
+$[2025-05-29T23:40:25.055Z] - Erro ao deletar usuarios: 
+$[2025-05-29T23:49:30.671Z] - Erro ao achar usuarios: 
+$[2025-05-29T23:50:04.144Z] - Erro ao achar usuarios: 
+$[2025-05-29T23:52:55.419Z] - Erro ao atualizar usuarios: 
+$[2025-05-29T23:53:55.610Z] - Erro ao atualizar usuarios: 
+$[2025-05-29T23:54:18.757Z] - Erro ao atualizar usuarios: 
+$[2025-06-03T17:09:37.089Z] - Erro ao achar usuarios: 
+$[2025-06-03T17:14:07.544Z] - Erro ao achar chocolates: 
