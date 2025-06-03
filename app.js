@@ -9,7 +9,7 @@ async function testaInsert(){
     //USUARIO
     const usuario = new Usuario("Thiago", "thiago@fakemail.com.br", "segredo");
     //await usuario.insert();
-    // await Usuario.update("nome", "Clever");
+    // await Usuario.update("Clever", { nome:"Cadu" });
     //await Usuario.find({nome: "Thiago"});
     //await Usuario.delete("thiago@fakemail.com.br");
 

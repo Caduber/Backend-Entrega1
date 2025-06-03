@@ -27,7 +27,7 @@ class Usuario {
     static async update(filter, newData){
         try{
             const {db, client} = await connect();
-            const result = await db.collection("usuarios").updateMany(filter, { $set: newData })
+            const result = await db.collection("usuarios").updateMany({nome: filter}, { $set: newData })
             console.log("Usuarios atualizados", result.modifiedCount);
             client.close();
         }catch(err){
