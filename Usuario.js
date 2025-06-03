@@ -60,19 +60,6 @@ class Usuario {
             //console.log("Erro ao deletar usuarios: ", err);
         }
     }
-
-    static async delete(email) {
-        try{
-            const {db, client} = await connect();
-            const usuario = {email: `${email}`};
-            const result = await db.collection("usuarios").deleteOne(usuario);
-            console.log("Usuarios removidos: ", result.deletedCount);
-            client.close();
-        }catch(err){
-            Logger.log("Erro ao deletar usuarios: ", err);
-            //console.log("Erro ao deletar usuarios: ", err);
-        }
-    }
 }
 
 module.exports = {Usuario};
